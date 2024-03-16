@@ -1,0 +1,98 @@
+/* style.css */
+
+body {
+    background-color: #0a0a0a;
+    color: #ff3d00;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+}
+
+h1 {
+    color: #2962ff;
+    margin-bottom: 20px;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+.site {
+    border: 1px solid #ff3d00;
+    background-color: #020047;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.site p {
+    margin: 5px 0;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: calc(100% - 120px);
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    border: 1px solid #ff3d00;
+    background-color: #1c1c1c;
+    color: #ff3d00;
+    margin-right: 10px;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #ff3d00;
+}
+
+button[type="submit"] {
+    padding: 8px 15px;
+    background-color: #ff3d00;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff6d00;
+}
+
+select {
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    border: 1px solid #ff3d00;
+    background-color: #1c1c1c;
+    color: #ff3d00;
+    margin-right: 10px;
+    width: calc(100% - 120px);
+}
+
+/* style.css */
+
+/* Autres styles CSS ... */
+
+.header {
+    color: #2962ff;
+    margin-bottom: 20px;
+}
+
+.rainbow {
+    background-image: linear-gradient(45deg, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f, #f00, #ff0, #0f0, #00f, #f0f);
+    background-size: 200% 200%;
+    animation: rainbow 2s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <center><h1 class="header">Control Panel by <span class="rainbow">TRHACKNON</span></h1></center>
+    <form action="/add_site" method="post" class="form">
+        <input type="text" name="site_url" placeholder="Enter site URL">
+        <input type="password" name="password" placeholder="Enter password">
+        <button type="submit">Add Site</button>
+    </form>
+    <div class="sites">
+        {% for site, info in sites_with_info %}
+        <div class="site">
+            <p>{{ site }}</p>
+            <p class="site-info">{{ info  | safe }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <form action="/upload_file" method="post" class="form">
+        <input type="text" name="file_url" placeholder="Enter file URL">
+        <button type="submit">Upload File</button>
+    </form>
+    <form action="/execute_command" method="post" class="form">
+        <select name="site" multiple>
+            {% for site, _ in sites_with_info %}
+            <option value="{{ site }}">{{ site }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="command" placeholder="Enter command">
+        <input type="password" name="password" placeholder="Enter password">
+        <button type="submit">Execute</button>
+    </form>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

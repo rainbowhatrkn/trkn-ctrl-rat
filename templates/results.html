@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: monospace;
+        }
+        h1 {
+            color: blue;
+        }
+        .output {
+            margin-top: 20px;
+        }
+        .site-output {
+            background-color: #000000;
+            color: #ff00ff;
+            padding: 10px;
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Command Results</h1>
+    <div class="output">
+        {% for site, output in results.items() %}
+        <div class="site-output">
+            <h2>Site: {{ site }}</h2>
+            <pre>{{ output | safe }}</pre>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: monospace;
+        }
+        h1 {
+            color: blue;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], select {
+            width: 300px;
+            padding: 5px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        button[type="submit"] {
+            padding: 5px 10px;
+            background-color: orange;
+            border: none;
+            color: black;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .results {
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Control Panel</h1>
+    <form action="/add_site" method="post">
+        <input type="text" name="site_url" placeholder="Enter site URL">
+        <button type="submit">Add Site</button>
+    </form>
+    <form action="/execute_command" method="post">
+        <select name="site" multiple>
+            {% for site in sites %}
+            <option value="{{ site }}">{{ site }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="command" placeholder="Enter command">
+        <button type="submit">Execute</button>
+    </form>
+</body>
+</html>
